@@ -5,6 +5,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.*;
 
 @Entity
+@Table(schema = "GAMBLER", name = "COUNTRY")
 public class Country {
 
     @Id
