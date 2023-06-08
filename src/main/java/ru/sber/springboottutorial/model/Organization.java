@@ -1,4 +1,4 @@
-package ru.sber.springboottutorial.persistence.model;
+package ru.sber.springboottutorial.model;
 
 import javax.persistence.*;
 

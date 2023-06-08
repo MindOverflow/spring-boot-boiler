@@ -3,12 +3,12 @@ package ru.sber.springboottutorial.persistence;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.sber.springboottutorial.persistence.dao.OrganizationRepository;
-import ru.sber.springboottutorial.persistence.dao.PrivilegeRepository;
-import ru.sber.springboottutorial.persistence.dao.UserRepository;
-import ru.sber.springboottutorial.persistence.model.Organization;
-import ru.sber.springboottutorial.persistence.model.Privilege;
-import ru.sber.springboottutorial.persistence.model.User;
+import ru.sber.springboottutorial.repository.OrganizationRepository;
+import ru.sber.springboottutorial.repository.PrivilegeRepository;
+import ru.sber.springboottutorial.repository.UserRepository;
+import ru.sber.springboottutorial.model.Organization;
+import ru.sber.springboottutorial.model.Privilege;
+import ru.sber.springboottutorial.model.User;
 
 import javax.annotation.PostConstruct;
 import java.util.Arrays;

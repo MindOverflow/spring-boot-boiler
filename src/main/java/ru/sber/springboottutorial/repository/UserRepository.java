@@ -1,8 +1,8 @@
-package ru.sber.springboottutorial.persistence.dao;
+package ru.sber.springboottutorial.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.sber.springboottutorial.persistence.model.User;
+import ru.sber.springboottutorial.model.User;
 
 
 public interface UserRepository extends JpaRepository<User, Long> {
