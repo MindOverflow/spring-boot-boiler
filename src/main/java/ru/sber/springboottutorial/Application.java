@@ -6,7 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
+// https://www.baeldung.com/java-openapi-generator-server
+@SpringBootApplication(
+    scanBasePackages = {
+        "ru.sber.springboottutorial",
+        "org.openapitools.api"
+    }
+)
 @RestController
 public class Application {
 
