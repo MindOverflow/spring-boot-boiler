@@ -5,6 +5,7 @@ import org.springframework.security.access.expression.method.DefaultMethodSecuri
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration;
+import ru.sber.springboottutorial.security.CustomMethodSecurityExpressionHandler;
 import ru.sber.springboottutorial.security.CustomPermissionEvaluator;
 
 @Configuration
@@ -12,7 +13,7 @@ import ru.sber.springboottutorial.security.CustomPermissionEvaluator;
 public class MethodSecurityConfig extends GlobalMethodSecurityConfiguration {
     @Override
     protected MethodSecurityExpressionHandler createExpressionHandler() {
-        DefaultMethodSecurityExpressionHandler methodSecurityExpressionHandler = new DefaultMethodSecurityExpressionHandler();
+        DefaultMethodSecurityExpressionHandler methodSecurityExpressionHandler = new CustomMethodSecurityExpressionHandler();
         methodSecurityExpressionHandler.setPermissionEvaluator(new CustomPermissionEvaluator());
         return methodSecurityExpressionHandler;
     }
