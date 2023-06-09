@@ -2,6 +2,7 @@ package ru.sber.springboottutorial.persistence;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import ru.sber.springboottutorial.repository.OrganizationRepository;
 import ru.sber.springboottutorial.repository.PrivilegeRepository;
@@ -23,6 +24,8 @@ public class SetupData {
     private PrivilegeRepository privilegeRepository;
     @Autowired
     private OrganizationRepository organizationRepository;
+    @Autowired
+    private PasswordEncoder encoder;
 
     @PostConstruct
     public void init() {
@@ -38,14 +41,14 @@ public class SetupData {
 
         final User user1 = new User();
         user1.setUsername("smith");
-        user1.setPassword("111");
+        user1.setPassword(encoder.encode("111"));
         user1.setPrivileges(new HashSet<>(Arrays.asList(privilege1)));
         user1.setOrganization(organizationRepository.findByName("FirstOrg"));
         userRepository.save(user1);
 
         final User user2 = new User();
         user2.setUsername("reingardt");
-        user2.setPassword("222");
+        user2.setPassword(encoder.encode("222"));
         user2.setPrivileges(new HashSet<>(Arrays.asList(privilege1, privilege2)));
         user2.setOrganization(organizationRepository.findByName("SecondOrg"));
         userRepository.save(user2);
