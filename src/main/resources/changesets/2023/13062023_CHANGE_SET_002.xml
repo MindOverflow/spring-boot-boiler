@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd
+	http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="13062023_CHANGE_SET_002" author="Kovalenko.A.Andr@sberbank.ru" >
+		<preConditions>
+			<tableExists schemaName="PUBLIC" tableName="EMPLOYEE"/>
+		</preConditions>
+		<sql>
+			INSERT INTO PUBLIC.EMPLOYEE (NAME, ADDRESS) VALUES ('Kovalenko Anton', 'Russia')
+		</sql>
+		<comment>Inserted new record in table 'PUBLIC.EMPLOYEE'</comment>
+	</changeSet>
+</databaseChangeLog>

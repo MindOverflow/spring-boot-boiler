@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd
+	http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet id="13062023_CHANGE_SET_001" author="Kovalenko.A.Andr@sberbank.ru">
+		<preConditions>
+			<not>
+				<tableExists schemaName="PUBLIC" tableName="EMPLOYEE"/>
+			</not>
+		</preConditions>
+
+		<createTable schemaName="PUBLIC" tableName="EMPLOYEE">
+			<column name="ID" type="INT" autoIncrement="true" />
+			<column name="NAME" type="VARCHAR(255)" />
+			<column name="ADDRESS" type="VARCHAR(255)" />
+		</createTable>
+
+		<rollback>
+			<dropTable schemaName="PUBLIC" tableName="EMPLOYEE"/>
+		</rollback>
+		<comment>Created new table named 'PUBLIC.EMPLOYEE'</comment>
+	</changeSet>
+</databaseChangeLog>
